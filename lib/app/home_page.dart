@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animated_fab_menu/app/components/circular_button.dart';
+import 'package:flutter_animated_fab_menu/app/screens/add_screen.dart';
+import 'package:flutter_animated_fab_menu/app/screens/camera_screen.dart';
+import 'package:page_transition/page_transition.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -99,6 +102,14 @@ class _HomePageState extends State<HomePage>
                         ),
                         onclick: () {
                           print('First Button');
+                          //Navigator.pushNamed(context, "/add");
+                          Navigator.push(
+                            context,
+                            PageTransition(
+                              child: AddScreen(),
+                              type: PageTransitionType.bottomToTop,
+                            ),
+                          );
                         },
                       ),
                     ),
@@ -121,6 +132,16 @@ class _HomePageState extends State<HomePage>
                         ),
                         onclick: () {
                           print('Second button');
+                          Navigator.push(
+                            context,
+                            PageTransition(
+                              child: CameraScreen(),
+                              type: PageTransitionType.rotate,
+                              alignment: Alignment.center,
+                              duration: Duration(milliseconds: 600),
+                              reverseDuration: Duration(milliseconds: 600),
+                            ),
+                          );
                         },
                       ),
                     ),
@@ -143,6 +164,7 @@ class _HomePageState extends State<HomePage>
                         ),
                         onclick: () {
                           print('Third Button');
+                          Navigator.pushNamed(context, "/contact");
                         },
                       ),
                     ),
