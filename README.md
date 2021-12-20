@@ -7,5 +7,5 @@ A new Flutter project.
 Creating a Fluid Animated Circular Floating Action Button Menu in Flutter. We will be taking a look at how to Create Animation in Flutter. We will be using Stack and Positioned and Use Advanced Animation Techniques.
 
  <p align="center">
-   <img width="300" height="600" src="FabMenu.gif">
+   <img width="600" height="600" src="FabMenu.gif">
 </p>
