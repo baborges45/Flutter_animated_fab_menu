@@ -18,7 +18,9 @@ class MyApp extends StatelessWidget {
       initialRoute: "/homePage",
       routes: {
         "/homePage": (context) => HomePage(),
-        "/add": (context) => AddScreen(),
+        "/add": (context) => AddScreen(
+              title: 'Um simples contador',
+            ),
         "/camera": (context) => CameraScreen(),
         "/contact": (context) => ContactScreen(),
       },

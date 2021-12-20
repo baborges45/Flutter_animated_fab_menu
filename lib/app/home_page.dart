@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animated_fab_menu/app/components/circular_button.dart';
 import 'package:flutter_animated_fab_menu/app/screens/add_screen.dart';
 import 'package:flutter_animated_fab_menu/app/screens/camera_screen.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:page_transition/page_transition.dart';
 
 class HomePage extends StatefulWidget {
@@ -197,3 +198,77 @@ class _HomePageState extends State<HomePage>
     ));
   }
 }
+
+// class HomePage extends StatefulWidget {
+//   const HomePage({Key? key}) : super(key: key);
+//   @override
+//   _HomePageState createState() => _HomePageState();
+// }
+
+// class _HomePageState extends State<HomePage> {
+//   ValueNotifier<bool> isDialOpen = ValueNotifier(false);
+//   @override
+//   Widget build(BuildContext context) {
+//     return WillPopScope(
+//       onWillPop: () async {
+//         if (isDialOpen.value) {
+//           isDialOpen.value = false;
+//           return false;
+//         } else {
+//           return true;
+//         }
+//       },
+//       child: Scaffold(
+//         floatingActionButton: SpeedDial(
+//           animatedIcon: AnimatedIcons.menu_close,
+//           openCloseDial: isDialOpen,
+//           backgroundColor: Colors.redAccent,
+//           overlayColor: Colors.grey,
+//           overlayOpacity: 0.5,
+//           spacing: 15,
+//           spaceBetweenChildren: 15,
+//           closeManually: true,
+//           children: [
+//             SpeedDialChild(
+//                 child: Icon(Icons.share_rounded),
+//                 label: 'Share',
+//                 backgroundColor: Colors.blue,
+//                 onTap: () {
+//                   print('Share Tapped');
+//                 }),
+//             SpeedDialChild(
+//                 child: Icon(Icons.mail),
+//                 label: 'Mail',
+//                 onTap: () {
+//                   print('Mail Tapped');
+//                 }),
+//             SpeedDialChild(
+//               child: Icon(Icons.copy),
+//               label: 'Anamnese',
+//               onTap: () {
+//                 print('Copy Tapped');
+//                 Navigator.push(
+//                   context,
+//                   PageTransition(
+//                     child: AddScreen(),
+//                     type: PageTransitionType.size,
+//                     alignment: Alignment.center,
+//                     duration: Duration(milliseconds: 600),
+//                     reverseDuration: Duration(milliseconds: 600),
+//                   ),
+//                 );
+//               },
+//             ),
+//           ],
+//         ),
+//         body: Container(
+//           alignment: Alignment.center,
+//           child: const Text(
+//             "FAB Menu Example",
+//             style: TextStyle(fontSize: 30),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
